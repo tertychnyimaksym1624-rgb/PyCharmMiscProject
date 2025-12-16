@@ -11,7 +11,7 @@ x_sort = np.sort(x)
 print(f"n = {n}")
 print(f"Варіаційний ряд: {x_sort}")
 
-# --- ЧАСТОТИ ---
+#Шось типу таблички як в зошиті
 freq = Counter(x_sort)
 vals = sorted(freq.keys())
 cnts = [freq[v] for v in vals]
@@ -22,7 +22,7 @@ print("-" * 15)
 for v, c in zip(vals, cnts):
     print(f"{v:<5} | {c:<5}")
 
-# --- ХАРАКТЕРИСТИКИ ---
+#Обрахунок числових характеристик
 x_mean = np.mean(x)                    # 1
 var_n = np.var(x, ddof=0)              # 2
 var_n1 = np.var(x, ddof=1)             # 3
@@ -56,9 +56,12 @@ print(f"10)Коефіціієнт варіації: V = {cv:.2f}%")
 print(f"11)Коефіцієнт асиметрії: A = {A:.4f}")
 print(f"12)Ексцес для вибірки: E = {E:.4f}")
 print("-"*50)
-# --- ГРАФІКИ ---
-plt.figure(figsize=(16, 8))
 
+
+
+
+#Побудова графіків
+plt.figure(figsize=(16, 8))
 # Гістограма
 plt.subplot(1, 2, 1)
 plt.hist(x, bins=int(((min(x)+max(x))/2)+1),
@@ -68,7 +71,6 @@ plt.xlabel('Значення x')
 plt.ylabel('Частота n')
 plt.grid(axis='y', alpha=0.5)
 plt.xticks(vals)
-
 # Емпірична функція
 plt.subplot(1, 2, 2)
 x_cdf = np.sort(x)
