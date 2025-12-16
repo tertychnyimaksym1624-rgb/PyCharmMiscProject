@@ -33,8 +33,9 @@ cv = (std_n1 / x_mean) * 100
 d = x - x_mean
 A = np.mean(d**3) / (std_n**3)
 E = (np.mean(d**4) / (std_n**4)) - 3
-print("-"*50)
 
+
+print("-"*50)
 print("\n--- Числові характеристики ---")
 print(f"\n1)Вибірркове середнє:  x̄ = {x_mean}")
 print(f"2)Вибіркова дисперсія:  D = {var_n:.4f}")
@@ -57,7 +58,7 @@ print("-"*50)
 plt.figure(figsize=(16, 8))
 # Гістограма
 plt.subplot(1, 2, 1)
-plt.hist(x, bins=int(((min(x)+max(x))/2)+1),
+plt.hist(x, bins=int(((min(x)+max(x))/2)+1),color="green",
          edgecolor='black', align='left', rwidth=0.8)
 plt.title('Статистичний розподіл вибірки')
 plt.xlabel('Значення x')
@@ -68,7 +69,7 @@ plt.xticks(vals)
 plt.subplot(1, 2, 2)
 x_cdf = np.sort(x)
 y_cdf = np.arange(1, n+1) / n
-plt.step(x_cdf, y_cdf, where='post')
+plt.step(x_cdf, y_cdf,color="red", where='post')
 plt.title('Емпірична функція розподілу')
 plt.xlabel('Значення x')
 plt.ylabel('Fn(x)')

@@ -69,11 +69,9 @@ class TwoSampleAnalysis:
     def __init__(self, sample_x: SingleSampleAnalysis, sample_y: SingleSampleAnalysis):
         if sample_x.n != sample_y.n:
             raise ValueError(f"Вибірки повинні бути однакової довжини: {sample_x.n} vs {sample_y.n}")
-
         self.sample_x = sample_x
         self.sample_y = sample_y
         self.n = sample_x.n
-
         # Параметри з об'єктів
         self.XSR = self.sample_x.XSR
         self.YSR = self.sample_y.XSR
@@ -81,18 +79,14 @@ class TwoSampleAnalysis:
         self.VBSRY = self.sample_y.VBSRX
         self.SX = self.sample_x.SX
         self.SY = self.sample_y.SX
-
         self.R = 0.0
         self.slope = 0.0
         self.intercept = 0.0
-
         self.df = self.n - 2
         self.t_obs = 0.0
         self.reliability = None
-
         self.calc_correlation_and_regression()
         self.check_significance()
-
     def calc_correlation_and_regression(self):
         numerator = np.sum((self.sample_x.data - self.XSR) * (self.sample_y.data - self.YSR))
         denominator = (self.n - 1) * self.SX * self.SY
