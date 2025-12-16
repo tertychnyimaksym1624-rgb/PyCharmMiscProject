@@ -30,8 +30,6 @@ x_med = np.median(x)
 x_mode = max(freq, key=freq.get)
 Q = (x_sort[14] - x_sort[4]) / 2
 cv = (std_n1 / x_mean) * 100
-
-# 11-12
 d = x - x_mean
 A = np.mean(d**3) / (std_n**3)
 E = (np.mean(d**4) / (std_n**4)) - 3
