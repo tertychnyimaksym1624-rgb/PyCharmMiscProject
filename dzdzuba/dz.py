@@ -20,18 +20,16 @@ for v, c in zip(vals, cnts):
     print(f"{v:<5} | {c:<5}")
 
 #Обрахунок числових характеристик
-x_mean = np.mean(x)                    # 1
-var_n = np.var(x, ddof=0)              # 2
-var_n1 = np.var(x, ddof=1)             # 3
-std_n = np.std(x, ddof=0)              # 4
-std_n1 = np.std(x, ddof=1)             # 5
-x_range = np.max(x) - np.min(x)        # 6
-x_med = np.median(x)                   # 7
-x_mode = max(freq, key=freq.get)       # 8
-Q1 = x_sort[4]
-Q3 = x_sort[14]
-Q = (Q3 - Q1) / 2                      # 9
-cv = (std_n1 / x_mean) * 100           # 10
+x_mean = np.mean(x)
+var_n = np.var(x, ddof=0)
+var_n1 = np.var(x, ddof=1)
+std_n = np.std(x, ddof=0)
+std_n1 = np.std(x, ddof=1)
+x_range = np.max(x) - np.min(x)
+x_med = np.median(x)
+x_mode = max(freq, key=freq.get)
+Q = (x_sort[14] - x_sort[4]) / 2
+cv = (std_n1 / x_mean) * 100
 
 # 11-12
 d = x - x_mean
