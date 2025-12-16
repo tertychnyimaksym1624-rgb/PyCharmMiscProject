@@ -2,16 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
 
-# --- ВХІДНІ ---
 x = [4,7,6,8,5,4,5,8,7,6,9,4,3,8,6,5,5,8,10,5]
 n = len(x)
-
-# --- ВАРІАЦІЙНИЙ РЯД ---
 x_sort = np.sort(x)
 print(f"n = {n}")
 print(f"Варіаційний ряд: {x_sort}")
 
-#Шось типу таблички як в зошиті
+# --- ЧАСТОТИ ---
 freq = Counter(x_sort)
 vals = sorted(freq.keys())
 cnts = [freq[v] for v in vals]
