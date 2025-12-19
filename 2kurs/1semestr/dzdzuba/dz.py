@@ -29,10 +29,9 @@ x_range = np.max(x) - np.min(x)
 x_med = np.median(x)
 x_mode = max(freq, key=freq.get)
 Q = (x_sort[14] - x_sort[4]) / 2
-cv = (std_n1 / x_mean) * 100
-d = x - x_mean
-A = np.mean(d**3) / (std_n**3)
-E = (np.mean(d**4) / (std_n**4)) - 3
+V = (std_n1 / x_mean) * 100
+A = np.mean(x - x_mean**3) / (std_n**3)
+E = (np.mean(x - x_mean**4) / (std_n**4)) - 3
 
 
 print("-"*50)
@@ -46,7 +45,7 @@ print(f"6)Розмах вибірки:  R = {x_range}")
 print(f"7)Медіана:  Me = {x_med}")
 print(f"8)Мода:  Mo = {x_mode} ({freq[x_mode]} разів)")
 print(f"9)Квадратильне відхилення:  Q = {Q}")
-print(f"10)Коефіціієнт варіації: V = {cv:.2f}%")
+print(f"10)Коефіціієнт варіації: V = {V:.2f}%")
 print(f"11)Коефіцієнт асиметрії: A = {A:.4f}")
 print(f"12)Ексцес для вибірки: E = {E:.4f}")
 print("-"*50)
